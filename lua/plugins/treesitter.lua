@@ -10,13 +10,12 @@ return {
             "css"
         },
         highlight = {
-            enable = true,  -- Active la coloration syntaxique
+            enable = true,
         },
     },
     config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
 
-        -- Vérifier et installer le parser TypeScript automatiquement
         local parsers = require("nvim-treesitter.parsers").get_parser_configs()
         if not parsers.typescript then
             vim.cmd("TSInstall typescript")
