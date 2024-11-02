@@ -29,6 +29,11 @@ vim.schedule(function()
   require("nvim-tree.api").tree.open()
 end)
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+  command = "PrettierAsync"
+})
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
