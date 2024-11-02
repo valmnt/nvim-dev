@@ -14,6 +14,10 @@ M.base46 = {
 	-- },
 }
 
-vim.opt.guicursor = ""
+M.ui = {
+  tabufline = {
+    enabled = false
+  }
+}
 
 return M
