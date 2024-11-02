@@ -14,4 +14,6 @@ M.base46 = {
 	-- },
 }
 
+vim.opt.guicursor = ""
+
 return M

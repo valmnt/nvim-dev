@@ -25,6 +25,10 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+vim.schedule(function()
+  require("nvim-tree.api").tree.open()
+end)
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
