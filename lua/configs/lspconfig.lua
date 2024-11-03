@@ -16,6 +16,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.ts_ls.setup{
+  on_attach = function(client, bufnr)
+    client.server_capabilities.document_formatting = false
+
+    local opts = { noremap = true, silent = true }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>li', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  end
+}
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
